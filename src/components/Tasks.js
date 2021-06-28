@@ -1,17 +1,13 @@
-const tasks = [
-    {   id: 1,
-        text: 'Send out resumes',
-        day: 'Jun 28th at 2:00pm',
-        reminder: true,
-    }
-]
+import Task from "./Task";
 
-const Tasks = () => {
-    return (
-        <div>
-            
-        </div>
-    )
-}
+const Tasks = ({ tasks, onDelete, onToggle }) => {
+  return (
+    <>
+      {tasks.map((task) => (
+        <Task key={task.id} task={task} onDelete={onDelete} onToggle={onToggle} />
+      ))}
+    </>
+  );
+};
 
-export default Tasks
+export default Tasks;
